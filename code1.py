@@ -8,16 +8,12 @@ import time
 import board
 import digitalio
 
-led_red = digitalio.DigitalInOut(board.GP9)
-led_green = digitalio.DigitalInOut(board.GP11)
-led_blue = digitalio.DigitalInOut(board.GP13)
+led = digitalio.DigitalInOut(board.GP9)
 
-led_red.direction = digitalio.Direction.OUTPUT
-led_green.direction = digitalio.Direction.OUTPUT
-led_blue.direction = digitalio.Direction.OUTPUT
+led.direction = digitalio.Direction.OUTPUT
 
 while True:
-    led_red.value = True
-    led_green.value = False
-    led_blue.value = False
-
+    led.value = True
+    time.sleep(1)
+    led.value = False
+    time.sleep(1)
